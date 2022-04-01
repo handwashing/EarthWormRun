@@ -58,12 +58,26 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        //사망처리
+        //애니메이터의 Die 트리거 파라미터를 셋
+        animator.SetTrigger("Die");
+        //오디오 소스에 할당된 오디오 클립을 deathClip으로 변경
+        playerAudio.clip = deathClip;
+        //사망 효과음 재생
+        playerAudio.Play();
+
+        //속도를 제로(0,0)로 변경
+        playerRigidbody.velocity = Vector2.zero;
+        //사망 상태를 true로 변경
+        isDead = true;c
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //트리거 콜라이더를 가진 장애물과의 충돌을 감지
+        if(other.tag == "Dead" && !isDead)
+        {
+            //충돌한 상대방의 태그가 Dead이며 아직 사망하지 않았다면 Die() 실행
+            Die();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

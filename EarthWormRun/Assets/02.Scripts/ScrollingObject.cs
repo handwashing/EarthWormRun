@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//°ÔÀÓ ¿ÀºêÁ§Æ®¸¦ °è¼Ó ¿ŞÂÊÀ¸·Î ¿òÁ÷ÀÌ´Â ½ºÅ©¸³Æ®
+//ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ê³„ì† ì™¼ìª½ìœ¼ë¡œ ì›€ì§ì´ëŠ” ìŠ¤í¬ë¦½íŠ¸
 public class ScrollingObject : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 10f;
 
     private void Update()
     {
-        //°ÔÀÓ ¿ÀºêÁ§Æ®¸¦ ÀÏÁ¤ ¼Óµµ·Î ¿ŞÂÊÀ¸·Î ÆòÇàÀÌµ¿ÇÏ´Â Ã³¸®
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        //ê²Œì„ì˜¤ë²„ê°€ ì•„ë‹ˆë¼ë©´~
+        if (!GameManager.instance.isGameover)
+        {
+            //ì´ˆë‹¹ speedì˜ ì†ë„ë¡œ ì™¼ìª½ìœ¼ë¡œ í‰í–‰ì´ë™
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        
     }
 }

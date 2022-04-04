@@ -93,8 +93,11 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Spark":
                 Die();
+                break;
+            case "Coin":
+                GameManager.instance.AddScore(50);
                 //    if (GameManager.instance.Crash() == true) Die();
-                //    collision.gameObject.SetActive(false);
+                collision.gameObject.SetActive(false);
                 //    collision.gameObject.GetComponentInChildren<GameObject>().SetActive(true);
                 break;
             default:

@@ -1042,10 +1042,10 @@ GameObject:
   - component: {fileID: 1378450222}
   - component: {fileID: 1378450221}
   - component: {fileID: 1378450220}
-  - component: {fileID: 1378450219}
   - component: {fileID: 1378450218}
   - component: {fileID: 1378450217}
   - component: {fileID: 1378450223}
+  - component: {fileID: 1378450219}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1181,9 +1181,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.48}
+  m_Offset: {x: 0.04456982, y: 0.03999998}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.6685811
 --- !u!50 &1378450220
 Rigidbody2D:
   serializedVersion: 4
@@ -1265,7 +1265,7 @@ Transform:
   m_GameObject: {fileID: 1378450216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1477,6 +1477,7 @@ MonoBehaviour:
   isGameover: 0
   scoreText: {fileID: 1463334215}
   gameoverUI: {fileID: 753745336}
+  menuPanel: {fileID: 0}
 --- !u!4 &1853072881
 Transform:
   m_ObjectHideFlags: 0

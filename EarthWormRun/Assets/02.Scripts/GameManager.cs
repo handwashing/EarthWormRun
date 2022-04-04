@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private int score = 0; //게임 점수
 
+    public GameObject menuPanel; //메뉴 패널 변수
+
     //게임 시작과 동시에 싱글턴을 구성
     void Awake()
     {
@@ -64,5 +66,22 @@ public class GameManager : MonoBehaviour
         isGameover = true;
         //게임오버 UI를 활성화
         gameoverUI.SetActive(true);
+    }
+    public void UIControl(string type)
+    {
+        switch (type)
+        {
+            case "menuon":
+                menuPanel.SetActive(true);
+                Time.timeScale = 0f;
+                break;
+            case "menuoff":
+                menuPanel.SetActive(false);
+                Time.timeScale = 0f;
+                break;
+            case "exit":
+                Application.Quit();
+                break;
+        }
     }
 }
